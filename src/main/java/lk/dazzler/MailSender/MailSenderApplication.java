@@ -18,9 +18,10 @@ public class MailSenderApplication {
 	}
 
 	@EventListener(ApplicationReadyEvent.class)
-	public void sendMain(){
+	public void sendMail(){
 		//who we want to send the mail
-		mailService.sendEmail("dasinduhewagamage@gmail.com",
+		mailService.sendEmail("uthpalahewagamage123@gmail.com",
+				"dasinduhewagamage@gmail.com",
 				"Spring Boot Mail Sending - JavaMailSending ",
 				"Once upon a time in a cozy little town, there lived a friendly dog named Buddy and a curious child named Lily. Buddy was a loyal companion known for his wagging tail and Lily was an imaginative and adventurous girl with a heart full of dreams.\n" +
 						"\n" +

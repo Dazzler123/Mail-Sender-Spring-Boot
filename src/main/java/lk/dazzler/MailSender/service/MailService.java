@@ -16,16 +16,23 @@ public class MailService {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    public void sendEmail(String to, String subject, String body){
+    public MailService(JavaMailSender javaMailSender){
+        this.javaMailSender = javaMailSender;
+    }
+
+    public String sendEmail(String to, String from, String subject, String body){
         SimpleMailMessage message = new SimpleMailMessage();
         //from where the mail is sent
-        message.setFrom("dasinduhewagamage@gmail.com");
+        message.setFrom(from);
+        //for whom the mail is sent
         message.setTo(to);
+        //subject(topic) of the mail
         message.setSubject(subject);
+        //content of the mail (body)
         message.setText(body);
 
         javaMailSender.send(message);
 
-        System.out.println("Mail Sent.");
+        return "Mail sent successfully.";
     }
 }
