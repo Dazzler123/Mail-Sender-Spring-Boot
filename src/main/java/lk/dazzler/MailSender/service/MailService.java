@@ -13,10 +13,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MailService {
+
     @Autowired
     private JavaMailSender javaMailSender;
 
-    public String sendEmail(String to, String from, String subject, String body){
+    //call this function when ever you want to send a mail
+    //make sure you pass the values correctly (mail_receiver,mail_sender,mail_subject,mail_content)
+    // all you have to do is autowire a reference of this service class wherever u prefer and
+    // call this method with passing values
+    public String sendEmail(String to, String from, String subject, String body) {
         SimpleMailMessage message = new SimpleMailMessage();
         //from where the mail is sent
         message.setFrom(from);
