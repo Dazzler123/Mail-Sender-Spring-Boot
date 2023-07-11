@@ -16,10 +16,6 @@ public class MailService {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    public MailService(JavaMailSender javaMailSender){
-        this.javaMailSender = javaMailSender;
-    }
-
     public String sendEmail(String to, String from, String subject, String body){
         SimpleMailMessage message = new SimpleMailMessage();
         //from where the mail is sent
